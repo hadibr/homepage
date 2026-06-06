@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PT. Stardia Teknologi Utama - IT Talent & Enterprise Solutions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        /* Modern Reset & Base Styles */
+        :root {
+            --primary: #078586;
+            --primary-dark: #055f60;
+            --secondary: #151929;
+            --dark: #1f2530;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .nav-btn {
+            background-color: transparent;
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            border: 1px solid transparent;
+        }
+
+        .nav-btn:hover {
+            color: var(--primary);
+            background: rgba(7, 133, 134, 0.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #ffffff;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            max-width: 600px;
+        }
+
+        .hero-image img {
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        /* Value Proposition Bar */
+        .tagline-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: #ffffff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+            height: 380px;
+            border-radius: 12px;
+            background: url('img889.jpg') center/cover;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-img::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(21, 25, 41, 0.4);
+            border-radius: 12px;
+        }
+
+        .about-text h2 {
+            font-size: 2.4rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(7, 133, 134, 0.1);
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .service-content p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .tech-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-list li {
+            background: #f1f5f9;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tech-list li::before {
+            content: '•';
+            color: var(--primary);
+        }
+
+        .service-img-wrapper {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .service-img-wrapper img {
+            max-height: 160px;
+            margin: 0 auto;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background: #ffffff;
+        }
+
+        .portfolio-summary {
+            text-align: center;
+            max-width: 700px;
+            margin: -40px auto 50px auto;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .portfolio-card {
+            background: var(--light-bg);
+            border-radius: 8px;
+            padding: 25px;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .portfolio-card:hover {
+            transform: scale(1.02);
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .portfolio-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-card h3 {
+            font-size: 1.15rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .portfolio-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Process Steps Section */
+        .process-section {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-card {
+            padding: 30px;
+            position: relative;
+        }
+
+        .process-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(7, 133, 134, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px auto;
+        }
+
+        .process-card h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--secondary);
+            color: #ffffff;
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .cta p {
+            color: #94a3b8;
+            margin-bottom: 35px;
+            font-size: 1.15rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(7, 133, 134, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(7, 133, 134, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #929ba8;
+            font-size: 0.9rem;
+        }
+
+        .footer-top {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-company h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-company p {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            padding: 25px 0;
+            text-align: center;
+            background: #1a1f29;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .service-cards, .portfolio-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .portfolio-grid {
+                gap: 20px;
+            }
+        }
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .process-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .about-img {
+                height: 280px;
+            }
+        }
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="https://stardiatech.com/">
+                    <img src="cropped-logo-stardia-web.png" alt="Stardia Logo" />
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a class="nav-btn" href="#ourservices">Our Services</a></li>
+                    <li><a class="nav-btn" href="#aboutstardia">Why Choose Us</a></li>
+                    <li><a class="nav-btn" href="#portfolio">Our Portfolio</a></li>
+                    <li><a class="nav-btn" href="http://wms.stardiatech.com" target="_blank">Our WMS</a></li>
+                    <li><a class="nav-btn" href="#contactus">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Struggling to Hire the <span>Right IT Talent On Time?</span></h1>
+                <p>Stop letting long hiring cycles delay your digital roadmaps. Trusted across dozens of enterprise deployments, we deploy vetted, project-ready IT experts tailored seamlessly to your exact technical requirements.</p>
+                <a href="#contactus" class="btn-primary">Get Your Free Consultation &nbsp; →</a>
+            </div>
+            <div class="hero-image">
+                <img src="img881.jpg" alt="Programmer team" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="tagline-section">
+        <div class="container">
+            <p><strong>"Focus heavily on scaling your business. Let us handle the technical heavy lifting."</strong></p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="aboutstardia" class="about">
+        <div class="container about-grid">
+            <div class="about-img"></div>
+            <div class="about-text">
+                <h2>Why Companies Trust Stardia with Their Engineering Needs</h2>
+                <p>In today's fast-moving tech landscape, finding elite developers, dependable project managers, and quality assurance specialists can stall your growth. Delayed timelines and prolonged recruitment gaps cost modern enterprises millions.</p>
+                <p>Stardia acts as your strategic execution partner. Backed by dozens of successful production launches, we bypass lengthy hiring bureaucracy and offer full flexibility to scale your delivery teams precisely when needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="ourservices" class="services">
+        <div class="container">
+            <div class="section-title">
+                <span>Our Capabilities</span>
+                <h2>Vetted IT Roles Ready to Scale Your Team</h2>
+            </div>
+            
+            <div class="service-cards">
+                <!-- Card 3: Project Manager -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Project Manager</h3>
+                        <p>Ensure seamless end-to-end execution of complex corporate systems. Our IT Project Managers bring strong governance, risk management, and cross-functional leadership to keep your enterprise deployments perfectly on track.</p>
+                        <ul class="tech-list">
+                            <li>SAP Systems</li>
+                            <li>Business Intelligence</li>
+                            <li>Custom Development</li>
+                        </ul>
+                    </div>
+                    <div class="service-img-wrapper">
+                        <img src="Online-tech-talks-amico.png" style="filter: hue-rotate(45deg);" alt="Project Manager Illustration" />
+                    </div>
+                </div>
+
+                <!-- Card 1: Software Developer -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Software Developer</h3>
+                        <p>Accelerate your product roadmap with our dedicated engineers. Specializing in robust frontend and backend environments, our talent delivers clean, secure, and easily maintainable code.</p>
+                        <ul class="tech-list">
+                            <li>React Js</li>
+                            <li>Microsoft .NET</li>
+                            <li>Agile Delivery</li>
+                        </ul>
+                    </div>
+                    <div class="service-img-wrapper">
+                        <img src="Online-tech-talks-amico.png" alt="Software Developer Illustration" />
+                    </div>
+                </div>
+
+                <!-- Card 2: QA & Tester -->
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>QA &amp; Tester</h3>
+                        <p>Protect your brand reputation from disruptive bugs. Our specialized QA analysts ensure comprehensive coverage through systematic manual and automated testing flows before you hit production.</p>
+                        <ul class="tech-list">
+                            <li>Develop Test Cases</li>
+                            <li>Automated Testing</li>
+                            <li>Feedback Loops</li>
+                        </ul>
+                    </div>
+                    <div class="service-img-wrapper">
+                        <img src="User-research-rafiki-1024x1024.png" alt="QA Tester Illustration" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section (Dozens of Projects Showcase) -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <span>Proven Track Record</span>
+                <h2>Our Portfolio &amp; Projects</h2>
+            </div>
+            <p class="portfolio-summary">
+                With <strong>dozens of successful implementations</strong> across various corporate industries, our specialized expertise ensures enterprise stability and smooth product rollouts. Here is a glance at some highlighted engineering tracks:
+            </p>
+            
+            <div class="portfolio-grid">
+                <!-- Track 1 -->
+                <div class="portfolio-card">
+                    <span class="portfolio-tag">SAP Integration</span>
+                    <h3>Enterprise ERP Rollout</h3>
+                    <p>Successfully managed and deployed complex SAP modules across multi-subsidiary enterprise ecosystems, streamlining complex supply chains and materials management pipelines.</p>
+                </div>
+                <!-- Track 2 -->
+                <div class="portfolio-card">
+                    <span class="portfolio-tag">Business Intelligence</span>
+                    <h3>Corporate BI &amp; Data Analytics</h3>
+                    <p>Architected automated data visualization pipelines and real-time business dashboards, enabling executive leaders to make high-impact, data-driven financial decisions.</p>
+                </div>
+                <!-- Track 3 -->
+                <div class="portfolio-card">
+                    <span class="portfolio-tag">Custom Development</span>
+                    <h3>High-Performance Web Platforms</h3>
+                    <p>Engineered dozens of custom frontend and backend web applications using React.js and Microsoft .NET frameworks to support high-volume transaction architectures.</p>
+                </div>
+                <!-- Track 4 -->
+                <div class="portfolio-card">
+                    <span class="portfolio-tag">Logistics Tech</span>
+                    <h3>Custom WMS Systems</h3>
+                    <p>Designed and scaled tailored Warehouse Management Systems (WMS) integrated with proprietary inventory tracking algorithms to eliminate warehouse operational bottlenecks.</p>
+                </div>
+                <!-- Track 5 -->
+                <div class="portfolio-card">
+                    <span class="portfolio-tag">Quality Assurance</span>
+                    <h3>Automated Regression Suites</h3>
+                    <p>Implemented massive automated end-to-end testing systems across dozens of digital commerce projects, decreasing production deployment errors significantly.</p>
+                </div>
+                <!-- Track 6 -->
+                <div class="portfolio-card">
+                    <span class="portfolio-tag">Agile Management</span>
+                    <h3>Cross-Functional Team Deployments</h3>
+                    <p>Successfully structured and embedded dozens of technical pods (PM, QA, Devs) directly into running corporate environments, boosting team output velocity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Steps Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <span>How It Works</span>
+                <h2>3 Simple Steps to Onboard Your Experts</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h3>1. Define Requirements</h3>
+                    <p>Share your target tech stack, team size requirements, and timeline milestones with us.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <h3>2. Match &amp; Interview</h3>
+                    <p>We screen our deeply vetted talent pool and present top-tier profiles for your final evaluation.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>3. Deploy &amp; Build</h3>
+                    <p>Your chosen IT talents seamlessly integrate directly into your internal workflows within days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contactus" class="cta">
+        <div class="container cta-content">
+            <h2>Ready to Accelerate Your Digital Projects?</h2>
+            <p>Get in touch with our team today for a completely free talent proposal and custom-tailored quote—no strings attached.</p>
+            <a class="btn-primary" href="mailto:contactus@stardiatech.com" target="_blank" rel="noreferrer noopener">Connect With Us Today &nbsp; <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container footer-company">
+                <h3>PT. Stardia Teknologi Utama</h3>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--primary); margin-right: 8px;"></i> Gedung Bumi Mandiri Tower II Level 12<br>Jl. Panglima Sudirman Kav. 66–68, Surabaya, East Java, Indonesia</p>
+                <p><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 8px;"></i> contactus@stardiatech.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2023 - 2026 PT Stardia Teknologi Utama. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
